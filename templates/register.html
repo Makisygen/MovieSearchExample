@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>映画一覧</title>
+</head>
+<body>
+    <form action='/result'>
+        <p>＜新規登録＞</p>
+        <label>
+            映画名    
+            <input type="text" name="name">
+        </label>
+        <label>
+            カテゴリ    
+            <!-- <input type="text" name="category"> -->
+            <select name="category">
+            <option value="">選択してください</option>
+            <option value="コメディ">コメディ</option>
+            <option value="サスペンス">サスペンス</option>
+            <option value="恋愛">恋愛</option>
+            <option value="ホラー">ホラー</option>
+            </select> 
+        </label>
+        <label >
+            価格
+            <!-- <input type="text" name="price"> --> 
+            <input type="number" name="price">       
+        </label>
+        <button type="submit" formmethod="POST">登録</button>
+    </form>
+</body>
+</html>

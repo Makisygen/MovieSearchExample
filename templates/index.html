@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>映画一覧</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>映画名</th>
+                    <th>価格</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in lists %}
+                <tr>
+                    <th>{{item.id}}</th>
+                    <th>{{item.name}}</th>
+                    <th>{{item.price}}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>    
+    <form action='/result'>
+        <p>＜新規登録＞</p>
+        <label>
+            映画名    
+            <input type="text" name="name">
+        </label>
+        <label >
+            価格
+            <input type="text" name="price">       
+        </label>
+        <button type="submit" formmethod="POST">登録</button>
+    </form>
+    
+</body>
+</html>
