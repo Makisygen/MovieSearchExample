@@ -5,32 +5,8 @@
     <title>映画一覧</title>
 </head>
 <body>
-    <form action='/add'>
-        <p>新規登録</p>
-        <input type="hidden" name="from" value="admin">
-        <label>
-            映画名    
-            <input type="text" name="add_name">
-        </label>
-        <label>
-            カテゴリ    
-            <select name="add_category">
-            <option value="">選択してください</option>
-            <option value="コメディ">コメディ</option>
-            <option value="サスペンス">サスペンス</option>
-            <option value="恋愛">恋愛</option>
-            <option value="ホラー">ホラー</option>
-            </select> 
-        </label>
-        <label >
-            価格
-            <input type="number" name="add_price">       
-        </label>
-        <button type="submit" formmethod="POST">登録</button>
-    </form>
+    <p>＜検索結果＞</p>
     <form action='/search'>
-        <p>検索欄</p>
-        <input type="hidden" name="from" value="admin">
         <label>
             映画名    
             <input type="text" name="search_name">
@@ -54,8 +30,6 @@
         </label>
         <button type="submit" formmethod="POST">検索</button>
     </form>
-    <form action='/delete'>
-    <p>検索結果一覧</p>
     <div>
         <table>
             <thead>
@@ -70,7 +44,7 @@
             <tbody>
                 {% for item in lists %}
                 <tr>
-                    <td class='pointer'><input type="checkbox" name="delete_target_id" value="{{item.id}}"></td>
+                    <td class='pointer'><input type="checkbox" id="test_1"></td>
                     <td>{{item.id}}</td>
                     <td>{{item.name}}</td>
                     <td>{{item.category}}</td>
@@ -80,7 +54,5 @@
             </tbody>
         </table>
     </div>    
-        <button type="submit" formmethod="POST">一括削除</button>
-    </form>
 </body>
 </html>
